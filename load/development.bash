@@ -1,8 +1,4 @@
-# colors
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-# Xcode shortcut
+# xcode shortcut
 function openx {
     workspace=$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)
     project=$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)
@@ -16,8 +12,15 @@ function openx {
     fi
 }
 
-# dev tools
+# mute dev tools
 export COCOAPODS_DISABLE_STATS=1
+
 export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+export FASTLANE_OPT_OUT_USAGE=1
+export FASTLANE_SKIP_UPDATE_CHECK=1
+
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
