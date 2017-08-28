@@ -3,6 +3,10 @@
 workspace=$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)
 project=$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)
 
-[ -d "$workspace" ] && open $workspace || echo "No Xcode workspace found. Trying project..."
-[ -d "$project" ] && open $project || echo "No Xcode project found. Sorry."
-
+if [ -d "$workspace" ]; then
+    open $workspace
+elif [ -d "$project" ]; then
+    open $project
+else
+    echo "Sorry. Nothing to open on Xcode here..."
+fi
