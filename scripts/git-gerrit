@@ -1,30 +1,38 @@
 #!/usr/bin/env bash
 
 function gerrit_help {
-    echo "Usage: git gerrit [ draft | publish | rebase | help ]"
-    exit 1
+	echo "Usage: git gerrit -d (draft) -p (publish) -r (rebase) -h (help)"
 }
 
 function gerrit_draft {
-    git push origin HEAD:refs/drafts/master
+	git push origin HEAD:refs/drafts/master
 }
 
 function gerrit_publish {
-    git push origin HEAD:refs/for/master
+	git push origin HEAD:refs/for/master
 }
 
 function gerrit_rebase {
-    git fetch
-    git rebase origin/master
+	git fetch
+	git rebase origin/master
 }
 
 [[ $# -ne 1  ]] && gerrit_help
 
-command=$1
-
-[[ "x$command" == "xdraft" ]] && gerrit_draft
-[[ "x$command" == "xpublish" ]] && gerrit_publish
-[[ "x$command" == "xpush" ]] && gerrit_push
-[[ "x$command" == "xrebase" ]] && gerrit_rebase
-[[ "x$command" == "xhelp" ]] && gerrit_help
-
+while getopts "dprh" opt; do
+	case $opt in
+		d)
+			gerrit_draft
+			;;
+		p)
+			gerrit_publish
+			;;
+		r)
+			gerrit_rebase
+			;;
+		h)
+			gerrit_help
+			exit 1
+			;;
+	esac
+done
