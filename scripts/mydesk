@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+function help {
+	echo "Usage: mydesk -s (show) | -h (hide)"
+}
+
+function showHide {
+	defaults write com.apple.finder CreateDesktop -bool $1 && killall Finder
+}
+
+[[ $# -ne 1 ]] && help
+
+while getopts "sh" opt; do
+	case $opt in
+		s)
+			showHide true
+			;;
+		h)
+			showHide false
+			;;
+	esac
+done

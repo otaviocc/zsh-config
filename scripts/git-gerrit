@@ -17,7 +17,7 @@ function gerrit_rebase {
 	git rebase origin/master
 }
 
-[[ $# -ne 1  ]] && gerrit_help
+[[ $# -ne 1 ]] && gerrit_help
 
 while getopts "dprh" opt; do
 	case $opt in
