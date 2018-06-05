@@ -2,11 +2,20 @@
 
 workspace=$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)
 project=$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)
+application="xcode"
+
+while getopts "b" opt; do
+    case $opt in
+        b)
+            application="xcode-beta"
+            ;;
+    esac
+done
 
 if [ -d "$workspace" ]; then
-    open $workspace
+    open -a $application $workspace
 elif [ -d "$project" ]; then
-    open $project
+    open -a $application $project
 else
     echo "Sorry. Nothing to open on Xcode here..."
 fi
