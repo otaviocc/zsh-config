@@ -8,7 +8,7 @@ function __prompt_command() {
     exit=""
 
     if [ $rc == 0 ]; then
-        exit="\[\033[1;33m\]-"
+        exit="\[\033[1;32m\]-"
     else
         exit="\[\033[0;31m\]✗"
     fi
