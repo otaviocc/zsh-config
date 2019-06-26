@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -d ".git" ]; then
+    ${GIT_GUI_TOOL} .
+else
+    echo "Sorry. Nothing to open on Xcode here..."
+fi
