@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'JSON'
+
+devices = JSON.parse `xcrun simctl list -j devices`
+
+devices['devices'].each do |runtime, runtime_devices|
+  runtime_devices.each do |device|
+    puts "Removing device #{device['name']} (#{device['udid']})"
+    `xcrun simctl delete #{device['udid']}`
+  end
+end
+

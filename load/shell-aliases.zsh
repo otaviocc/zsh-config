@@ -8,3 +8,4 @@ alias nuke='\
     echo 🚨 Cleaning git untracked files ;\
         git clean -fdx ;\
     '
+alias gs='gitsh'
