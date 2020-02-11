@@ -1,11 +1,6 @@
-alias reload="source ~/.zprofile"
+alias reload="source ~/.zshrc"
 alias cls="clear"
 alias l="ls -lGgho"
 alias be="bundle exec"
-alias nuke='\
-    echo 🚨 Cleaning derived data ;\
-        rm -rf ~/Library/Developer/Xcode/DerivedData/ ;\
-    echo 🚨 Cleaning git untracked files ;\
-        git clean -fdx ;\
-    '
-alias gs='gitsh'
+alias cdp="~/Workspace/Personal"
+alias cdi="~/Workspace/GYG/iOS"

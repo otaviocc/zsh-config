@@ -25,3 +25,8 @@ setopt hist_verify
 setopt inc_append_history
 setopt interactivecomments
 setopt share_history
+setopt autocd
+setopt autopushd
+setopt pushdignoredups
+
+export LC_ALL=en_US.UTF-8

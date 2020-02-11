@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo 🚨 Killing Xcode ;\
+    killall Xcode ;\
+    xcrun -k ;\
+echo 🚨 Cleaning derived data ;\
+    rm -rf ~/Library/Developer/Xcode/DerivedData/ ;\
+echo 🚨 Cleaning Xcode cache ;\
+    rm -rf ~/Library/Caches/com.apple.dt.Xcode/ ;\
+echo 🚨 Cleaning git untracked files ;\
+    git clean -fdx ;\
+echo ✅ Done. ;\

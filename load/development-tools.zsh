@@ -1,9 +1,10 @@
+# CocoaPods
 export COCOAPODS_DISABLE_STATS=1
 
+# Homebrew
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# Fastlane
 export FASTLANE_OPT_OUT_USAGE=1
 export FASTLANE_SKIP_UPDATE_CHECK=1
-
-export GIT_GUI_TOOL="gittower"

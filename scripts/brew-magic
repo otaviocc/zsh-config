@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo -e "🚨 Updating Brew\n" ;\
+    brew update ;\
+echo -e "\n🚨 Upgrading Brew\n" ;\
+    brew upgrade --verbose ;\
+echo -e "\n🚨 Upgrading Casks\n" ;\
+    brew cask upgrade --greedy --verbose ;\
+echo -e "\n🚨 Cleaning up old stuff\n" ;\
+    brew cleanup --verbose ;\
+echo -e "\n✅ Done." ;\

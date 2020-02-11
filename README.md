@@ -5,16 +5,16 @@
 First, create a backup of your current setup:
 
 ```bash
-$ mv ~/.bash ~/.bash.old
-$ mv ~/.bash_profile ~/.bash_profile.old
+$ mv ~/.zsh ~/.zsh.old
+$ mv ~/.zshrc ~/.zshrc.old
 ```
 
 Then, clone this repository and apply settings:
 
 ```bash
-$ git clone git://github.com/ornithocoder/bash-config.git
-$ mv bash-config ~/.bash
-$ ln -s ~/.bash/bash_profile ~/.bash_profile
+$ git clone git://github.com/otaviocc/zsh-config.git
+$ mv zsh-config ~/.zsh
+$ ln -s ~/.zsh/zshrc ~/.zshrc
 ```
 
 Finally, open a new terminal to apply the new settings.
