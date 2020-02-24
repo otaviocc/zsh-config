@@ -1,4 +1,4 @@
-# Bash Configuration
+# Z shell Configuration
 
 # Install
 
